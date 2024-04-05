@@ -8,3 +8,9 @@ for (let i = 0; i < 16 * 16; i++) {
 
 const container = document.querySelector(".container");
 container.appendChild(fragment);
+
+container.addEventListener("mouseover", (e) => {
+    if (e.target.classList.contains("grid-item")) {
+        e.target.classList.add("hover");
+    }
+});

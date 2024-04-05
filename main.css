@@ -14,3 +14,7 @@ body {
     width: calc(100% * (1/16));
     aspect-ratio: 1;
 }
+
+.grid-item.hover {
+    background-color: blue;
+}
