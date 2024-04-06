@@ -1,5 +1,6 @@
 :root {
     --non-grid-combined-height: ;
+    --grid-size: ;
 }
 
 html, body {
@@ -26,6 +27,11 @@ button {
     margin-bottom: 1rem;
 }
 
+.grid > span {
+    margin: 0 auto;
+    align-self: center;
+}
+
 .grid {
     margin: 0 auto;
     border: 1px solid black;
@@ -38,9 +44,9 @@ button {
 }
 
 .grid-item {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     box-sizing: border-box;
-    width: calc(100% * (1/16));
+    width: calc(100% * (1/var(--grid-size)));
 }
 
 .grid-item.hover {

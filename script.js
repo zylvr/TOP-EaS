@@ -38,19 +38,35 @@ root.style.setProperty("--non-grid-combined-height", `${combinedHeight}px`);
 
 
 
-let fragment = new DocumentFragment();
+const button = document.querySelector("button");
 
-for (let i = 0; i < 16 * 16; i++) {
-    const div = document.createElement("div");
-    div.className = "grid-item";
-    fragment.appendChild(div);
-}
+button.addEventListener("click", () => {
+    // GET GRID SIZE
 
-const container = document.querySelector(".grid");
-container.appendChild(fragment);
+    let gridSize;
 
-container.addEventListener("mouseover", (e) => {
-    if (e.target.classList.contains("grid-item")) {
-        e.target.classList.add("hover");
+    while (!(gridSize >= 1 && gridSize <= 100)) {
+        gridSize = parseInt(prompt("Enter a grid size between 1 and 100."));
     }
+
+    root.style.setProperty("--grid-size", gridSize);
+
+    // CREATE GRID
+
+    let fragment = new DocumentFragment();
+
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        const div = document.createElement("div");
+        div.className = "grid-item";
+        fragment.appendChild(div);
+    }
+
+    const container = document.querySelector(".grid");
+    container.replaceChildren(fragment);
+
+    container.addEventListener("mouseover", (e) => {
+        if (e.target.classList.contains("grid-item")) {
+            e.target.classList.add("hover");
+        }
+    });
 });
