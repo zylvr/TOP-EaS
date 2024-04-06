@@ -1,3 +1,7 @@
+:root {
+    --non-grid-combined-height: ;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -15,13 +19,18 @@ body {
 
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
+}
+
+button {
+    margin-bottom: 1rem;
 }
 
 .grid {
     margin: 0 auto;
     border: 1px solid black;
     box-sizing: border-box;
-    max-height: calc(100dvh - 2rem);
+    max-height: calc(100dvh - var(--non-grid-combined-height));
     aspect-ratio: 1;
 
     display: flex;
