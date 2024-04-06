@@ -6,7 +6,7 @@ for (let i = 0; i < 16 * 16; i++) {
     fragment.appendChild(div);
 }
 
-const container = document.querySelector(".container");
+const container = document.querySelector(".grid");
 container.appendChild(fragment);
 
 container.addEventListener("mouseover", (e) => {
